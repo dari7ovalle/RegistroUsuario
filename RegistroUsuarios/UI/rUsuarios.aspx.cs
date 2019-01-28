@@ -44,8 +44,7 @@ namespace RegistroUsuarios.UI
 
             //DateTime fecha = DateTime.ParseExact(edtStartDate.Text, new[] { "YYYYMMDD", "YYMMDD" }, CultureInfo.InvariantCulture, DateTimeStyles.None);
             //tbSubject.Text = fecha.ToString("YYMMDD");
-            usuario.Fecha = " 123333";
-                //DateTime.Now.ToString();
+            usuario.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
 
             return usuario;
 

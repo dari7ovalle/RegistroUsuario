@@ -11,16 +11,25 @@ namespace RegistroUsuarios.Consultas
 {
     public partial class cUsuarios : System.Web.UI.Page
     {
+        Expression<Func<Usuarios, bool>> filtro = x => true;
+        BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
+        List<Usuarios> usuarios = new List<Usuarios>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                usuarios = repositorio.GetList(filtro);
+                DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            }
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
-            Expression<Func<Usuarios, bool>> filtro = x => true;
-            BLL.RepositorioBase<Usuarios> repositorio = new BLL.RepositorioBase<Usuarios>();
 
+            string desde = DesdeTextBox.Text;
+            string hasta = HastaTextBox.Text.ToString("yyyy-MM-dd");
             int id;
 
             switch (BuscarDropDownList.SelectedIndex)
@@ -28,7 +37,7 @@ namespace RegistroUsuarios.Consultas
                 case 0:
 
                     int.TryParse(FiltroTextBox.Text, out id);
-                    filtro = c => c.UsuarioId == id;
+                    filtro = c => c.UsuarioId == id && c.Fecha != desde && c.Fecha == hasta;
                     //
                     break;
                 case 1:// nombre
@@ -36,9 +45,11 @@ namespace RegistroUsuarios.Consultas
                     break;
             }
 
-            DatosGridView.DataSource = repositorio.GetList(filtro);
+            usuarios = repositorio.GetList(filtro);
+            DatosGridView.DataSource = usuarios;
             DatosGridView.DataBind();
         }
     }
+}
         
     

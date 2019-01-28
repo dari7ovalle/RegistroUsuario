@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   
+    <div class="container">
+
+    
     <h2>Consultas de Usuarios</h2>
          
                  <div class="form-group">
@@ -15,13 +18,24 @@
                      </div>
                      <br />
                      
+                     <div class="form-row">
+                         <div class="form-group">
+                             <asp:Label Text="Desde" runat="server" />
+                             <asp:TextBox CssClass="form-control" ID="HastaTextBox" TextMode="Date"  runat="server" />
+                         </div>
+                         
+                         <div class="form-group">
+                             <asp:Label Text="Hasta" runat="server" />
+                             <asp:TextBox CssClass="form-control" ID="DesdeTextBox" TextMode="Date"  runat="server" />
+                         </div>
 
+                     </div>
                          <div class="row">
                       <div class="col-xs-6 col-md-5">
                         <asp:TextBox runat="server" ID="FiltroTextBox" CssClass="form-control " placeholder="UsuarioId"/>
                       </div>
                       <div class="col-xs-3 col-md-7">
-                        <asp:Button Text="Buscar"  for="FiltroTextBox" runat="server" ID="BuscarButton" CssClass="btn btn-primary"  />
+                        <asp:Button Text="Buscar"  for="FiltroTextBox" runat="server" ID="BuscarButton" OnClick="BuscarButton_Click" CssClass="btn btn-primary"  />
                       </div>
                  </div>
   
@@ -32,5 +46,6 @@
                 </asp:GridView>
                  </div>
             </div>
-            
+</div>
+
 </asp:Content>
