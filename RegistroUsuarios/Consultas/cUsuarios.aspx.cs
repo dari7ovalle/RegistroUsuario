@@ -28,8 +28,9 @@ namespace RegistroUsuarios.Consultas
         protected void BuscarButton_Click(object sender, EventArgs e)
         {
 
-            string desde = DesdeTextBox.Text;
-            string hasta = HastaTextBox.Text.ToString("yyyy-MM-dd");
+            DateTime desde = Convert.ToDateTime( DesdeTextBox.Text);
+
+            DateTime hasta = Convert.ToDateTime(HastaTextBox.Text);
             int id;
 
             switch (BuscarDropDownList.SelectedIndex)
@@ -37,11 +38,11 @@ namespace RegistroUsuarios.Consultas
                 case 0:
 
                     int.TryParse(FiltroTextBox.Text, out id);
-                    filtro = c => c.UsuarioId == id && c.Fecha != desde && c.Fecha == hasta;
+                    filtro = c => c.UsuarioId == id && c.Fecha >= desde && c.Fecha <= hasta;
                     //
                     break;
                 case 1:// nombre
-                    filtro = c => c.Nombre.Contains(FiltroTextBox.Text);
+                    filtro = c => c.Nombre.Contains(FiltroTextBox.Text) && c.Fecha >= desde && c.Fecha <= hasta;
                     break;
             }
 

@@ -21,12 +21,12 @@
                      <div class="form-row">
                          <div class="form-group">
                              <asp:Label Text="Desde" runat="server" />
-                             <asp:TextBox CssClass="form-control" ID="HastaTextBox" TextMode="Date"  runat="server" />
+                             <asp:TextBox CssClass="form-control" ID="DesdeTextBox" TextMode="Date"  runat="server" />
                          </div>
                          
                          <div class="form-group">
                              <asp:Label Text="Hasta" runat="server" />
-                             <asp:TextBox CssClass="form-control" ID="DesdeTextBox" TextMode="Date"  runat="server" />
+                             <asp:TextBox CssClass="form-control" ID="HastaTextBox" TextMode="Date"  runat="server" />
                          </div>
 
                      </div>

@@ -45,7 +45,7 @@
             <asp:Label ID="Label3" runat="server" Text="Correo:"></asp:Label>
         </div>
         <div class="col-xs-10 col-md-5">
-             <asp:TextBox ID="CorreoTextBox1"   type="text"  runat="server" CssClass="form-control " placeholder="Ingrese un Correo"  minlength="5" maxlength="40"></asp:TextBox>
+             <asp:TextBox ID="CorreoTextBox1" TextMode="Email"   type="text"  runat="server" CssClass="form-control " placeholder="Ingrese un Correo"  minlength="5" maxlength="40"></asp:TextBox>
            </div>
     </div>
 

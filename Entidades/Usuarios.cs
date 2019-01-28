@@ -18,7 +18,7 @@ namespace Entidades
         public string ComprobarClave { get; set; }
         public string Telefono { get; set; }
         public string Celular { get; set; }
-        public string Fecha { get; set; }
+        public DateTime Fecha { get; set; }
         public string   TipoUsuario { get; set; }
         public Usuarios()
         {
@@ -30,7 +30,7 @@ namespace Entidades
             this.ComprobarClave = string.Empty;
             this.Telefono = string.Empty;
             this.Celular = string.Empty;
-            this.Fecha = string.Empty;
+            this.Fecha = DateTime.Now.Date;
             this.TipoUsuario = string.Empty; 
 
         }

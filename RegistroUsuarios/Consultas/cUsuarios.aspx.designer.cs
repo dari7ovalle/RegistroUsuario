@@ -22,15 +22,6 @@ namespace RegistroUsuarios.Consultas {
         protected global::System.Web.UI.WebControls.DropDownList BuscarDropDownList;
         
         /// <summary>
-        /// HastaTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox HastaTextBox;
-        
-        /// <summary>
         /// DesdeTextBox control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace RegistroUsuarios.Consultas {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DesdeTextBox;
+        
+        /// <summary>
+        /// HastaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HastaTextBox;
         
         /// <summary>
         /// FiltroTextBox control.
