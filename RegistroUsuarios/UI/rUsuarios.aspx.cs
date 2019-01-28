@@ -18,7 +18,7 @@ namespace RegistroUsuarios.UI
         }
         private void Limpiar()
         {
-            NombreTextBox.Text = " ";
+            NombreUsuariTextBox1.Text = " ";
             NombreUsuariTextBox1.Text = " ";
             CorreoTextBox1.Text = " ";
             ContrasenaTextBox.Text = " ";
@@ -33,7 +33,7 @@ namespace RegistroUsuarios.UI
            
 
 
-            usuario.Nombre = NombreTextBox.Text;
+            usuario.Nombre = NombreUsuariTextBox1.Text;
             usuario.NombreUsuario = NombreUsuariTextBox1.Text;
             usuario.Email = CorreoTextBox1.Text;
             usuario.Clave = ContrasenaTextBox.Text;
@@ -68,33 +68,35 @@ namespace RegistroUsuarios.UI
             //todo: validaciones adicionales
             LlenaClase(usuarios);
 
-            if (usuarios.UsuarioId == 0)
+            if(IsValid)
             {
-                if (paso = repositorio.Guardar(usuarios))
-                    Response.Write("<script>alert('Guardado Correctamente');</script>");
-
-                else
+                if (usuarios.UsuarioId == 0)
                 {
-                    Response.Write("<script>alert('Error al Guardar');</script>");
-                }
-                Limpiar();
-            }
+                    if (paso = repositorio.Guardar(usuarios))
+                        Response.Write("<script>alert('Guardado Correctamente');</script>");
 
-
-
-
-            else
-            {
-                if (paso = repositorio.Modificar(usuarios))
-                {
-                    Response.Write("<script>alert('Modificado Correctamente');</script>");
+                    else
+                    {
+                        Response.Write("<script>alert('Error al Guardar');</script>");
+                    }
                     Limpiar();
                 }
+                                             
                 else
                 {
-                    Response.Write("<script>alert('Error al Modificar');</script>");
+                    if (paso = repositorio.Modificar(usuarios))
+                    {
+                        Response.Write("<script>alert('Modificado Correctamente');</script>");
+                        Limpiar();
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Error al Modificar');</script>");
+                    }
                 }
             }
+
+            
         }
 
         protected void eliminarutton_Click(object sender, EventArgs e)
@@ -138,6 +140,18 @@ namespace RegistroUsuarios.UI
             {
                 Response.Write("<script>alert('Usuario  no existe');</script>");
 
+            }
+        }
+
+        protected void ConfirmarCustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (ConfirmarTextBox1.Text != ContrasenaTextBox.Text)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
             }
         }
     }

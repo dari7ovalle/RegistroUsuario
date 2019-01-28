@@ -74,8 +74,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Consultas\cUsuarios.aspx" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="UI\rUsuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
