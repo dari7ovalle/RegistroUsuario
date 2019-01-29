@@ -23,6 +23,12 @@
                         </div>
                     </div>
                 </div>
+                  <div class="col-xs-10 col-md-5">
+                        <asp:TextBox ID="NombreTextBox" type="text" runat="server" CssClass="form-control " placeholder="Ingrese un Nombre " minlength="4" MaxLength="40"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="NombreTextBox" ValidationGroup="Guardar" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-xs-2 col-md-2">
@@ -30,8 +36,8 @@
 
                     </div>
                     <div class="col-xs-10 col-md-5">
-                        <asp:TextBox ID="NombreUsuariTextBox1" type="text" runat="server" CssClass="form-control " placeholder="Ingrese un Nombre de Usuario" minlength="5" MaxLength="40"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="NombreUsuariTextBox1" ValidationGroup="Guardar" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="NombreUsuarioTextBox1" type="text" runat="server" CssClass="form-control " placeholder="Ingrese un Nombre de Usuario" minlength="5" MaxLength="40"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="NombreUsuarioTextBox1" ValidationGroup="Guardar" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
 
                     </div>
                 </div>
@@ -42,7 +48,6 @@
                     <div class="col-xs-10 col-md-5">
                         <asp:TextBox ID="CorreoTextBox1" TextMode="Email" type="text" runat="server" CssClass="form-control " placeholder="Ingrese un Correo" minlength="5" MaxLength="40"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="CorreoTextBox1" ValidationGroup="Guardar" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-
                     </div>
                 </div>
 
@@ -72,7 +77,7 @@
                             <asp:Label ID="Label4" runat="server" Text="Telefono:"></asp:Label>
                         </div>
                         <div class="col-xs-10 col-md-5">
-                            <asp:TextBox ID="TelefonoTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Nombre" minlength="10" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="TelefonoTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Telefono" minlength="10" MaxLength="10"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="Guardar" ControlToValidate="TelefonoTextBox1" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TelefonoTextBox1" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
 
@@ -83,29 +88,20 @@
                             <asp:Label ID="Label5" runat="server" Text="Celular:"></asp:Label>
                         </div>
                         <div class="col-xs-10 col-md-5">
-                            <asp:TextBox ID="CelularTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Nombre" minlength="10" MaxLength="10"></asp:TextBox>
+                            <asp:TextBox ID="CelularTextBox1" type="text" runat="server" TextMode="Phone" CssClass="form-control " placeholder="Ingrese un Celular" minlength="10" MaxLength="10"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="Guardar" ControlToValidate="CelularTextBox1" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="CelularTextBox1" ForeColor="Red" Display="Dynamic" ErrorMessage="Porfavor ingrese un numero" ValidationExpression="(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
-
                         </div>
                     </div>
-
                     <div class="col-md-5 col-md-offset-4">
-
                         <div class="form-group">
                             <asp:Label ID="Label8" runat="server" Text="Tipo de Usuario"></asp:Label>
                             <asp:DropDownList class="form-control" ID="tipoUsuarioDropDownList" runat="server">
                                 <asp:ListItem>Administrador</asp:ListItem>
                                 <asp:ListItem>Usuario</asp:ListItem>
                             </asp:DropDownList>
-
                         </div>
                     </div>
-
-
-
-
-
                     <div class="col-md-4 col-md-offset-3">
                         <div class="card-footer">
                             <div class="form-group">

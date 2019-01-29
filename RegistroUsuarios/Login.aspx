@@ -14,7 +14,7 @@
             <br>
             <div class="card">
                 <article class="card-body">
-                    <a href="/UI/rUsuarios.aspx " class="float-right btn btn-outline-primary">Registrarse</a>
+                    <a href="/UI/rUsuarios.aspx" class="float-right btn btn-outline-primary">Registrarse</a>
                     <h4 class="card-title mb-4 mt-1">Iniciar Sesión</h4>
                     <form>
                         <div class="form-group">

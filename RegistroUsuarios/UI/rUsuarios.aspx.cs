@@ -18,8 +18,8 @@ namespace RegistroUsuarios.UI
         }
         private void Limpiar()
         {
-            NombreUsuariTextBox1.Text = " ";
-            NombreUsuariTextBox1.Text = " ";
+            NombreUsuarioTextBox1.Text = " ";
+            NombreUsuarioTextBox1.Text = " ";
             CorreoTextBox1.Text = " ";
             ContrasenaTextBox.Text = " ";
             ConfirmarTextBox1.Text = " ";
@@ -33,8 +33,8 @@ namespace RegistroUsuarios.UI
            
 
 
-            usuario.Nombre = NombreUsuariTextBox1.Text;
-            usuario.NombreUsuario = NombreUsuariTextBox1.Text;
+            usuario.Nombre = NombreUsuarioTextBox1.Text;
+            usuario.NombreUsuario = NombreUsuarioTextBox1.Text;
             usuario.Email = CorreoTextBox1.Text;
             usuario.Clave = ContrasenaTextBox.Text;
             usuario.ComprobarClave = ConfirmarTextBox1.Text;
@@ -126,7 +126,7 @@ namespace RegistroUsuarios.UI
             if (usuarios != null)
             {
                 NombreTextBox.Text = usuarios.Nombre;
-                NombreUsuariTextBox1.Text= usuarios.NombreUsuario;
+                NombreUsuarioTextBox1.Text= usuarios.NombreUsuario;
                 CorreoTextBox1.Text = usuarios.Email;
                 ContrasenaTextBox.Text = usuarios.Clave;
                 ConfirmarTextBox1.Text = usuarios.ComprobarClave;
