@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -73,7 +74,9 @@ namespace RegistroUsuarios.UI
                 if (usuarios.UsuarioId == 0)
                 {
                     if (paso = repositorio.Guardar(usuarios))
-                        Response.Write("<script>alert('Guardado Correctamente');</script>");
+                       
+                  Utils.ShowToastr(this, "saved successfully", "Success", "success");
+                    //Response.Write("<script>alert('Guardado Correctamente');</script>");
 
                     else
                     {
@@ -107,10 +110,12 @@ namespace RegistroUsuarios.UI
             var usuario = repositorio.Buscar(id);
 
             if (usuario == null)
-                Response.Write("<script>alert('Error al Eliminar');</script>");
+                Utils.ShowToastr(this, "eliminated successfully", "Success", "success");
+            //Response.Write("<script>alert('Error al Eliminar');</script>");
             else
                 repositorio.Eliminar(id);
-            Response.Write("<script>alert(' Usuario Eliminada');</script>");
+            Utils.ShowToastr(this, "saeliminated successfully", "Success", "error");
+            //Response.Write("<script>alert(' Usuario Eliminada');</script>");
         }
 
         protected void nuevoButton_Click(object sender, EventArgs e)
@@ -138,7 +143,8 @@ namespace RegistroUsuarios.UI
             }
             else
             {
-                Response.Write("<script>alert('Usuario  no existe');</script>");
+                Utils.ShowToastr(this, "saved successfully", "Success", "error");
+                //Response.Write("<script>alert('Usuario  no existe');</script>");
 
             }
         }
